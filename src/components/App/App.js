@@ -13,7 +13,10 @@ class App extends Component {
           </div>
           <div className="col-12 col-md-9 row m-0 p-0 bg-warning challengeMainWrapper">
             <div className="col-sm-12 p-0 challengeEditorWrapper">
-              <p />
+              <CodeEditor
+                id="codeEditor"
+                onChange={value => console.log(value)}
+              />
             </div>
             <div className="col-sm-12 row p-0 m-0 challengeButtonsWrapper">
               <button className="btn btn-light m-2">Testar</button>
