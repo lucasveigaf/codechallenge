@@ -1,0 +1,6 @@
+{
+  "title": "este é um título",
+  "timeLimit": 10,
+  "description": "esta é uma descrição de um challenge",
+  "languages": ["python", "javascript", "ruby"]
+}
