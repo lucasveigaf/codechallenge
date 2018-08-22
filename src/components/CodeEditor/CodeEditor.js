@@ -1,17 +1,23 @@
 import React from "react";
 import AceEditor from "react-ace";
 import "brace/mode/javascript";
-import "brace/theme/monokai";
+import "brace/theme/tomorrow";
 
-const CodeEditor = ({ id, onChange }) => {
+const languages = ["javascript", "java", "python", "ruby"];
+languages.forEach(lang => {
+  require(`brace/mode/${lang}`);
+});
+
+const CodeEditor = ({ id, onChange, language, value }) => {
   return (
     <AceEditor
-      mode="javascript"
-      theme="monokai"
+      mode={language}
+      theme="tomorrow"
       onChange={onChange}
       name={id}
       width={"100%"}
       height={"100%"}
+      value={value}
       showPrintMargin={false}
       setOptions={{
         useWorker: false,

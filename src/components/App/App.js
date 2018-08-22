@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Navbar from "../Navbar/Navbar";
-import CodeEditor from "../CodeEditor/CodeEditor";
+import CodeChallenge from "../CodeChallenge/CodeChallenge";
 import challenge from "../../mocks/challenge.json";
 
 class App extends Component {
@@ -15,15 +15,12 @@ class App extends Component {
               <p>{challenge.description}</p>
             </div>
             <div className="col-sm-8 col-md-8 col-lg-9 row m-0 p-0 challengeMainWrapper">
-              <div className="col-sm-12 p-0 challengeEditorWrapper">
-                <CodeEditor
+              <div className="col-sm-12 p-0">
+                <CodeChallenge
                   id="codeEditor"
                   onChange={value => console.log(value)}
+                  languages={challenge.languages}
                 />
-              </div>
-              <div className="col-sm-12 row challengeButtonsWrapper">
-                <button className="btn btn-light m-2">Testar</button>
-                <button className="btn btn-dark m-2">Enviar</button>
               </div>
               <div className="col-sm-12 challengeOutputWrapper">
                 <p>></p>

@@ -1,0 +1,29 @@
+.challengeEditorWrapper {
+  height: 300px;
+}
+
+.codeEditorOptions {
+  z-index: 10;
+  position: relative;
+}
+
+.codeChallenge {
+  -webkit-box-shadow: 0px 0px 15px -4px rgba(0, 0, 0, 0.63);
+  -moz-box-shadow: 0px 0px 15px -4px rgba(0, 0, 0, 0.63);
+  box-shadow: 0px 0px 15px -4px rgba(0, 0, 0, 0.63);
+  margin-bottom: 30px;
+}
+
+.boxDivisor {
+  margin: 0px 0px 10px 0px;
+}
+
+.codeChallengeTopRow {
+  padding: 10px;
+}
+
+@media (max-width: 767px) {
+  .challengeEditorWrapper {
+    height: 435px;
+  }
+}
