@@ -1,33 +1,37 @@
 import React, { Component } from "react";
 import "./App.css";
+import Navbar from "../Navbar/Navbar";
 import CodeEditor from "../CodeEditor/CodeEditor";
 import challenge from "../../mocks/challenge.json";
 
 class App extends Component {
   render() {
     return (
-      <div className="container-fluid bg-danger">
-        <div className="row fill bg-success">
-          <div className="col-12 col-md-3 challengeDescriptionWrapper">
-            <p>{challenge.description}</p>
-          </div>
-          <div className="col-12 col-md-9 row m-0 p-0 bg-warning challengeMainWrapper">
-            <div className="col-sm-12 p-0 challengeEditorWrapper">
-              <CodeEditor
-                id="codeEditor"
-                onChange={value => console.log(value)}
-              />
+      <React.Fragment>
+        <Navbar />
+        <div className="container-fluid">
+          <div className="row fill">
+            <div className="col-sm-4 col-md-4 col-lg-3 row m-0 p-0 challengeDescriptionWrapper">
+              <p>{challenge.description}</p>
             </div>
-            <div className="col-sm-12 row p-0 m-0 challengeButtonsWrapper">
-              <button className="btn btn-light m-2">Testar</button>
-              <button className="btn btn-dark m-2">Enviar</button>
-            </div>
-            <div className="col-sm-12 challengeOutputWrapper bg-dark">
-              <p>></p>
+            <div className="col-sm-8 col-md-8 col-lg-9 row m-0 p-0 challengeMainWrapper">
+              <div className="col-sm-12 p-0 challengeEditorWrapper">
+                <CodeEditor
+                  id="codeEditor"
+                  onChange={value => console.log(value)}
+                />
+              </div>
+              <div className="col-sm-12 row challengeButtonsWrapper">
+                <button className="btn btn-light m-2">Testar</button>
+                <button className="btn btn-dark m-2">Enviar</button>
+              </div>
+              <div className="col-sm-12 challengeOutputWrapper">
+                <p>></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
