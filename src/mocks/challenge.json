@@ -2,5 +2,10 @@
   "title": "este é um título",
   "timeLimit": 10,
   "description": "esta é uma descrição de um challenge",
-  "languages": ["python", "javascript", "ruby"]
+  "languages": [
+    { "value": "python", "label": "Python" },
+    { "value": "javascript", "label": "JavaScript" },
+    { "value": "ruby", "label": "Ruby" },
+    { "value": "java", "label": "Java" }
+  ]
 }
