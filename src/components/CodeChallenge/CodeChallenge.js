@@ -103,17 +103,17 @@ class CodeChallenge extends React.Component {
     return (
       <div className="codeChallenge">
         <div className="row codeChallengeTopRow">
-          <div className="col-6 col-sm-7 col-md-7 col-lg-9">
+          <div className="col-12 col-sm-7 col-md-7 col-lg-9">
             <div className="codeChallengeButtons">
               <button
-                className="btn btn-light"
+                className="btn btn-light mr-2"
                 disabled={this.state.codeSubmitted}
                 onClick={this.testCode}
               >
                 Testar
               </button>
               <button
-                className="btn btn-dark ml-2"
+                className="btn btn-dark"
                 disabled={this.state.codeSubmitted}
                 onClick={this.submitCode}
               >
@@ -121,7 +121,7 @@ class CodeChallenge extends React.Component {
               </button>
             </div>
           </div>
-          <div className="col-6 col-sm-5 col-md-5 col-lg-3 codeEditorOptions">
+          <div className="col-12 col-sm-5 col-md-5 col-lg-3 codeEditorOptions">
             <Select
               value={this.state.selectedOption}
               onChange={this.handleOptionChange}
