@@ -1,6 +1,9 @@
 import React from "react";
 import logo from "./img/logo.svg";
 
+/**
+ * A simple navbar showing the company's logo
+ */
 const Navbar = () => {
   return (
     <nav class="navbar navbar-light bg-light">

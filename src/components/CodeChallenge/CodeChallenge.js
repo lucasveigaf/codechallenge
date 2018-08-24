@@ -3,13 +3,34 @@ import CodeEditor from "../CodeEditor/CodeEditor";
 import "./CodeChallenge.css";
 import Select from "react-select";
 
+/**
+ * It renders the code editor for the user, along with the buttons for testing and
+ * submitting the code.
+ * @param {Object} props
+ * @param {array} props.languages - The languages available for the challenge.
+ * @param {Number} props.timelimit - Time limit for the challenge's completion, in milliseconds.
+ * @param {String} props.id - Id to be used for the CodeEditor component.
+ * @param {Function} props.onCodeTest - Callback function for when the user sends his code for testing.
+ * It sends back the current editor's content.
+ * @param {Function} props.onResponse - Callback function for when the compiling API sends back a response.
+ * It sends back the API response.
+ * @param {Function} props.onError - Callback function for when the compiling API sends back an error or
+ * is unreachable. It sends back the error object.
+ * @param {Function} props.onSubmit - Callback function for when the user submits his code. It sends back
+ * the current editor's content.
+ */
 class CodeChallenge extends React.Component {
   state = {
+    // the first language is initially selected on the dropdown for the challenge.
     selectedOption: this.props.languages[0],
     editorValue: "",
     codeSubmitted: false
   };
 
+  /**
+   * When the component mounts, it starts a timer with the challenge time limit, and upon reaching it,
+   * the editor's current content is automatically submitted.
+   */
   componentDidMount() {
     const { timeLimit } = this.props;
     if (timeLimit) {
@@ -27,6 +48,13 @@ class CodeChallenge extends React.Component {
     this.setState({ editorValue });
   };
 
+  /**
+   * It sends the current editor's content to the compiler API for testing.
+   * It then reads the response and deal with the necessary callback function.
+   * If the API responds with an error property or is unreachable, and error is thrown.
+   * the editor's current content is automatically submitted.
+   * Please note that this ideally shouldn't be hardcoded here.
+   */
   testCode = async () => {
     try {
       if (this.props.onCodeTest) {

@@ -6,16 +6,30 @@ import CodeOutput from "../CodeOutput/CodeOutput";
 import ChallengeIntro from "../ChallengeIntro/ChallengeIntro";
 import challenge from "../../mocks/challenge.json";
 
+/**
+ * Starting point of the application. It renders the 4 main components of the app:
+ * Navbar, ChallengeIntro, CodeChallenge and CodeOutput.
+ * It is responsible for the communication between these components and for the
+ * submission of the user's code.
+ */
 class App extends Component {
   state = {
     codeOutput: "",
     isWaitingResponse: false
   };
 
+  /**
+   * Callback function for when the code is sent for testing.
+   * @param {String} value - the user's code.
+   */
   onCodeTest = value => {
     this.setState({ isWaitingResponse: true, error: false });
   };
 
+  /**
+   * Callback function for when the compiler API sends a response back.
+   * @param {String} response - the output of the user's code.
+   */
   onResponse = response => {
     this.setState({
       codeOutput: response,
@@ -23,6 +37,10 @@ class App extends Component {
     });
   };
 
+  /**
+   * Callback function for when the compiler API isn't reachable or sends back an error.
+   * @param {Object} error - the error object.
+   */
   onError = error => {
     this.setState({
       isWaitingResponse: false,
@@ -31,6 +49,10 @@ class App extends Component {
     });
   };
 
+  /**
+   * Callback function for when the user submits his code.
+   * @param {string} value - the user's code.
+   */
   onCodeSubmit = value => {
     // aqui enviariamos o código final do usuário ao back end.
     alert("Teste enviado!");

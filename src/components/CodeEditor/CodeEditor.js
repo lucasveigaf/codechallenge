@@ -8,6 +8,16 @@ languages.forEach(lang => {
   require(`brace/mode/${lang}`);
 });
 
+/**
+ * It renders the code editor, filling 100% of it's available area.
+ * @param {Object} props
+ * @param {String} props.language - The language to be used for syntax highlighting and
+ * other features of the Ace Editor.
+ * @param {Function} props.onChange - Callback function for the editor's content changes.
+ * It sends back the current editor's content.
+ * @param {String} props.id - Id to be used for the html element.
+ * @param {String} props.value - It is a controlled component, so we set the editor's value.
+ */
 const CodeEditor = ({ id, onChange, language, value }) => {
   return (
     <AceEditor
