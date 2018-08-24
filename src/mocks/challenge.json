@@ -3,8 +3,8 @@
   "timeLimit": 300000,
   "description": "Escreva uma função que ao receber **_n_** como parâmetro, retorna um array com todos os números entre **0** e **_n_**. \n\n --- \n\n### Por exemplo: \n\nAo receber 14 como parâmetro, a função deveria retornar:\n\n `[1, 2, 3 ... 14]` \n\nNote que **'...'** corresponde a um intervalo.",
   "languages": [
-    { "value": "python3", "label": "Python 3", "jdoodleVersion": 2 },
-    { "value": "php", "label": "PHP", "jdoodleVersion": 2 },
+    { "value": "csharp", "label": "C#", "jdoodleVersion": 2 },
+    { "value": "elixir", "label": "Elixir", "jdoodleVersion": 2 },
     { "value": "ruby", "label": "Ruby", "jdoodleVersion": 2 },
     { "value": "java", "label": "Java", "jdoodleVersion": 2 }
   ]

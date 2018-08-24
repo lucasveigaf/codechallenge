@@ -1,9 +1,8 @@
 import React from "react";
 import AceEditor from "react-ace";
-import "brace/mode/javascript";
 import "brace/theme/tomorrow";
 
-const languages = ["javascript", "java", "python", "ruby"];
+const languages = ["csharp", "elixir", "ruby", "java"];
 languages.forEach(lang => {
   require(`brace/mode/${lang}`);
 });
